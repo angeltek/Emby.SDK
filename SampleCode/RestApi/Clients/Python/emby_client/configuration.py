@@ -228,6 +228,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'key': 'api_key',
                     'value': self.get_api_key_with_prefix('api_key')
                 },
+            'embyauth':
+                {
+                    'type': 'access_token',
+                    'in': 'header',
+                    'key': 'X-Emby-Token',
+                    'value': self.get_api_key_with_prefix('access_token')
+                },
         }
 
     def to_debug_report(self):
