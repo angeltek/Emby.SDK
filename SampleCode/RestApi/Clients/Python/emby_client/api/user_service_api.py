@@ -455,7 +455,7 @@ class UserServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['is_hidden', 'is_disabled', 'start_index', 'limit', 'name_starts_with_or_greater', 'sort_order']  # noqa: E501
+        all_params = ['is_hidden', 'is_disabled', 'start_index', 'limit', 'item_id', 'name_starts_with_or_greater', 'sort_order']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -484,6 +484,8 @@ class UserServiceApi(object):
             query_params.append(('StartIndex', params['start_index']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('Limit', params['limit']))  # noqa: E501
+        if 'item_id' in params:
+            query_params.append(('ItemId', params['item_id']))  # noqa: E501
         if 'name_starts_with_or_greater' in params:
             query_params.append(('NameStartsWithOrGreater', params['name_starts_with_or_greater']))  # noqa: E501
         if 'sort_order' in params:
